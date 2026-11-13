@@ -13,7 +13,6 @@
       this.el = {};
     }
 
-    /** Dispara SFX si AudioManager está disponible. */
     sfx(name) {
       global.App?.audio?.play(name);
     }
@@ -50,7 +49,6 @@
       if (el) el.hidden = !visible;
     }
 
-    /** Reinicia una animación CSS en un elemento. */
     replayAnimation(el, cls) {
       if (!el) return;
       el.classList.remove(cls);
@@ -99,8 +97,6 @@
 
       this.el.question.textContent = q.q;
       this.el.options.innerHTML = '';
-
-      // Reiniciar animación del título
       this.replayAnimation(this.el.question, 'anim');
 
       q.options.forEach((text, idx) => {
@@ -108,7 +104,7 @@
         btn.className = 'option';
         btn.type = 'button';
         btn.textContent = text;
-        btn.style.setProperty('--i', idx);   // ⚠️ ANTES de appendChild
+        btn.style.setProperty('--i', idx);
         btn.addEventListener('click', () => this.answer(idx, btn));
         this.el.options.appendChild(btn);
       });
@@ -157,8 +153,8 @@
 
       const ratio = this.state.score / this.items.length;
       const msg = ratio === 1 ? '🌟 ¡Perfecto!'
-                : ratio >= 0.6 ? '👏 Muy bien: repasá lo que falló.'
-                : '💪 Repasá y volvé a intentarlo.';
+                : ratio >= 0.6 ? '👏 Muy bien: repasa lo que falló.'
+                : '💪 Repasa y vuelve a intentarlo.';
       this.setFeedback(true, msg);
       this.sfx('win');
       this.onComplete(this.state.score, this.items.length);
@@ -253,8 +249,8 @@
       this.el.statement.textContent = `¡Terminaste! Acertaste ${this.state.score} de ${this.items.length}.`;
       this.setFeedback(true,
         this.state.score >= 7 ? '🌟 Ojo entrenado.' :
-        this.state.score >= 5 ? '👍 Vas bien, seguí practicando.' :
-                                '💪 Repasá las señales y volvé a intentarlo.');
+        this.state.score >= 5 ? '👍 Vas bien, sigue practicando.' :
+                                '💪 Repasa las señales y vuelve a intentarlo.');
       this.toggle(this.el.red, false);
       this.toggle(this.el.green, false);
       this.toggle(this.el.restart, true);
@@ -308,7 +304,7 @@
         btn.className = 'option';
         btn.type = 'button';
         btn.textContent = opt.text;
-        btn.style.setProperty('--i', idx);   // ⚠️ ANTES de appendChild
+        btn.style.setProperty('--i', idx);
         btn.addEventListener('click', () => this.answer(idx, btn));
         this.el.options.appendChild(btn);
       });
@@ -355,7 +351,7 @@
       this.el.options.innerHTML = '';
       this.toggle(this.el.next, false);
       this.toggle(this.el.restart, true);
-      this.setFeedback(true, '💬 La asertividad se entrena: cuanto más la practicás, más natural sale.');
+      this.setFeedback(true, '💬 La asertividad se entrena: cuanto más la practicas, más natural sale.');
       this.sfx('win');
     }
   }
