@@ -9,11 +9,16 @@
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/games.css">
 
-<script src="js/data.js" defer></script>
+<!-- 
+  Audio: agregá tus archivos en:
+    audio/music/background.mp3
+    audio/sfx/{click, correct, wrong, card, win}.mp3
+  Si no existen, la app funciona igual (silenciosa).
+-->
+<script src="js/data.js"   defer></script>
 <script src="js/audio.js"  defer></script>
-<script src="js/games.js" defer></script>
-<script src="js/app.js" defer></script>
-
+<script src="js/games.js"  defer></script>
+<script src="js/app.js"    defer></script>
 </head>
 <body>
 
@@ -35,7 +40,7 @@
         <span class="pill">🤝 Amistades que suman</span>
         <span class="pill">🛠️ Herramientas concretas</span>
       </div>
-      <p class="nav-hint rv">Usá <kbd>←</kbd> <kbd>→</kbd>, deslizá o tocá los bordes</p>
+      <p class="nav-hint rv">Usa <kbd>←</kbd> <kbd>→</kbd>, desliza o toca los bordes</p>
     </div>
   </section>
 
@@ -44,7 +49,7 @@
     <div class="inner">
       <span class="badge rv">Bloque 1 · Decidir</span>
       <h2 class="rv">¿Qué es <span class="grad">decidir</span>?</h2>
-      <p class="objetivo rv">Al terminar este bloque vas a poder explicar qué hacemos cuando decidimos.</p>
+      <p class="objetivo rv">Al terminar este bloque podrás explicar qué hacemos cuando decidimos.</p>
       <div class="grid grid--2 rv">
         <div class="card">
           <div class="ico">🧭</div>
@@ -60,7 +65,7 @@
         </div>
       </div>
       <div class="example rv">
-        <div>Te invitan a una joda la noche antes del examen.
+        <div>Te invitan a una fiesta la noche antes del examen.
           <strong>Elegir</strong> es ir o no ir. <strong>Decidir</strong> es también hacerte cargo del lunes.</div>
       </div>
       <div class="reflect rv">
@@ -74,7 +79,7 @@
     <div class="inner">
       <span class="badge rv">Bloque 1 · Autonomía</span>
       <h2 class="rv">La <span class="grad">autonomía</span></h2>
-      <p class="lead rv">Es la capacidad de gobernarte a vos mismo: pensar con tu cabeza y responder por tus elecciones.</p>
+      <p class="lead rv">Es la capacidad de gobernarte a ti mismo: pensar con tu cabeza y responder por tus elecciones.</p>
       <div class="grid grid--2 rv">
         <div class="card card--red">
           <div class="ico">🚫</div>
@@ -84,11 +89,11 @@
         <div class="card card--green">
           <div class="ico">✅</div>
           <h3>Sí es…</h3>
-          <p>Pensar con criterio propio, elegir motivos y <strong>hacerme cargo</strong> de lo que decido, incluso si me equivoco.</p>
+          <p>Pensar con criterio propio, elegir motivos y <strong>hacerte cargo</strong> de lo que decides, incluso si te equivocas.</p>
         </div>
       </div>
       <div class="example rv">
-        <div>Tus amigos van a un lugar al que vos no querés ir.
+        <div>Tus amigos van a un lugar al que tú no quieres ir.
           <strong>Autonomía</strong> es poder decir «no, gracias» sin que eso te haga sentir menos.</div>
       </div>
     </div>
@@ -124,10 +129,14 @@
         (planificación y control de impulsos). Por eso a esta edad <strong>sentir pesa más que pensar</strong>:
         no es un defecto, es una etapa. Y se entrena.
       </div>
+      <div class="example rv">
+        <div>Suena el celular a las 2 AM con un plan improvisado. La parte impulsiva dice «total, voy».
+          La parte reflexiva pregunta: <strong>«¿qué pasa mañana?»</strong></div>
+      </div>
     </div>
   </section>
 
-  <!-- 5 · CHECKPOINT 1 (mini-quiz del bloque 1) -->
+  <!-- 5 · CHECKPOINT 1 -->
   <section class="slide">
     <div class="inner">
       <span class="badge rv">Checkpoint 1 · Decisiones</span>
@@ -152,7 +161,7 @@
     <div class="inner">
       <span class="badge rv">Bloque 2 · Amistades</span>
       <h2 class="rv">Amistades: ¿suman o <span class="grad-r">restan</span>?</h2>
-      <p class="objetivo rv">Al terminar este bloque vas a poder distinguir una amistad que suma de una que resta.</p>
+      <p class="objetivo rv">Al terminar este bloque podrás distinguir una amistad que suma de una que resta.</p>
       <div class="grid grid--2 rv">
         <div class="card card--green">
           <div class="ico">💚</div>
@@ -167,7 +176,7 @@
       </div>
       <div class="remember rv">
         <div class="remember__label">Para recordar</div>
-        <div>Una amistad no se mide por cuánto dura, sino por <strong>cómo te sentís después de estar con esa persona</strong>.</div>
+        <div>Una amistad no se mide por cuánto dura, sino por <strong>cómo te sientes después de estar con esa persona</strong>.</div>
       </div>
     </div>
   </section>
@@ -182,17 +191,17 @@
           <div class="phone__header">
             <span class="phone__back">‹</span>
             <div class="phone__avatar">M</div>
-            <div class="phone__name">Marto <small>en línea</small></div>
+            <div class="phone__name">Martín <small>en línea</small></div>
             <span class="phone__icons">📞</span>
           </div>
           <div class="phone__chat">
             <div class="chat-day">HOY</div>
-            <div class="msg msg--in"><div class="msg__bubble">Che, ¿todo bien? Te vi raro hoy en la escuela<span class="msg__meta">14:32</span></div></div>
-            <div class="msg msg--out"><div class="msg__bubble">Sí, en casa están con quilombos, no me concentro<span class="msg__meta">14:34<span class="checks">✓✓</span></span></div></div>
-            <div class="msg msg--in"><div class="msg__bubble">Uf, qué garrón. ¿Querés hablar o que te distraiga un rato?<span class="msg__meta">14:35</span></div></div>
-            <div class="msg msg--out"><div class="msg__bubble">Distraeme un rato, después te cuento<span class="msg__meta">14:36<span class="checks">✓✓</span></span></div></div>
-            <div class="msg msg--in"><div class="msg__bubble">Dale, te paso un video que me morí de risa<span class="msg__meta">14:37</span></div></div>
-            <div class="msg msg--in"><div class="msg__bubble">Y cuando quieras hablar sabés que estoy 💪<span class="msg__meta">14:38</span></div></div>
+            <div class="msg msg--in"><div class="msg__bubble">Ey, ¿todo bien? Te vi raro hoy en la escuela<span class="msg__meta">14:32</span></div></div>
+            <div class="msg msg--out"><div class="msg__bubble">Sí, en casa hay problemas, no me concentro<span class="msg__meta">14:34<span class="checks">✓✓</span></span></div></div>
+            <div class="msg msg--in"><div class="msg__bubble">Uf, qué mal. ¿Quieres hablar o que te distraiga un rato?<span class="msg__meta">14:35</span></div></div>
+            <div class="msg msg--out"><div class="msg__bubble">Distráeme un rato, después te cuento<span class="msg__meta">14:36<span class="checks">✓✓</span></span></div></div>
+            <div class="msg msg--in"><div class="msg__bubble">OK, te paso un video que me dio mucha risa<span class="msg__meta">14:37</span></div></div>
+            <div class="msg msg--in"><div class="msg__bubble">Y cuando quieras hablar sabes que estoy 💪<span class="msg__meta">14:38</span></div></div>
           </div>
         </div>
         <div class="chat-explain">
@@ -224,20 +233,20 @@
           </div>
           <div class="phone__chat">
             <div class="chat-day">HOY</div>
-            <div class="msg msg--in"><div class="msg__bubble">Dale, venite a la joda, están todos<span class="msg__meta">21:14</span></div></div>
-            <div class="msg msg--out"><div class="msg__bubble">No puedo, mis viejos no me dejan y mañana tengo examen<span class="msg__meta">21:16<span class="checks">✓✓</span></span></div></div>
-            <div class="msg msg--in"><div class="msg__bubble">Uh, sos un nene de mamá 😂<span class="msg__meta">21:16</span></div></div>
-            <div class="msg msg--in"><div class="msg__bubble">En serio, si no venís no sé para qué te tengo de amigo<span class="msg__meta">21:17</span></div></div>
-            <div class="msg msg--in"><div class="msg__bubble">No seas cagón, decile que dormís en lo de Santi<span class="msg__meta">21:18</span></div></div>
-            <div class="msg msg--in"><div class="msg__bubble">Dale boludo, todos lo hacen, no me hagas quedar mal<span class="msg__meta">21:19</span></div></div>
+            <div class="msg msg--in"><div class="msg__bubble">Vamos, ven a la fiesta, están todos<span class="msg__meta">21:14</span></div></div>
+            <div class="msg msg--out"><div class="msg__bubble">No puedo, mis papás no me dejan y mañana tengo examen<span class="msg__meta">21:16<span class="checks">✓✓</span></span></div></div>
+            <div class="msg msg--in"><div class="msg__bubble">Uh, eres un niño de mamá 😂<span class="msg__meta">21:16</span></div></div>
+            <div class="msg msg--in"><div class="msg__bubble">En serio, si no vienes no sé para qué te tengo de amigo<span class="msg__meta">21:17</span></div></div>
+            <div class="msg msg--in"><div class="msg__bubble">No seas cobarde, dile que duermes en casa de Santi<span class="msg__meta">21:18</span></div></div>
+            <div class="msg msg--in"><div class="msg__bubble">Vamos tonto, todos lo hacen, no me hagas quedar mal<span class="msg__meta">21:19</span></div></div>
           </div>
         </div>
         <div class="chat-explain red">
           <h3>Señales rojas</h3>
           <ul>
-            <li>Usa apodos hirientes («nene de mamá»).</li>
+            <li>Usa apodos hirientes («niño de mamá»).</li>
             <li>Chantaje emocional: «no sé para qué te tengo».</li>
-            <li>Minimiza tu decisión: «no seas cagón».</li>
+            <li>Minimiza tu decisión: «no seas cobarde».</li>
             <li>Frase clásica de presión: «todos lo hacen».</li>
             <li>Te hace sentir culpable por decir que no.</li>
           </ul>
@@ -251,23 +260,23 @@
     <div class="inner">
       <span class="badge rv">Bloque 2 · Concepto clave</span>
       <h2 class="rv">La <span class="grad">presión de grupo</span></h2>
-      <p class="lead rv">Es la fuerza que sentís para actuar como el grupo espera, aunque no coincida con lo que vos querés.</p>
+      <p class="lead rv">Es la fuerza que sientes para actuar como el grupo espera, aunque no coincida con lo que tú quieres.</p>
       <div class="grid grid--2 rv">
         <div class="card">
           <div class="ico">📢</div>
           <h3>Directa</h3>
           <p>Alguien te lo pide, te insiste o te desafía:
-            <em>«dale, no seas exagerado»</em>, <em>«todos lo hacen»</em>, <em>«si no venís, no sos del grupo»</em>.</p>
+            <em>«vamos, no seas exagerado»</em>, <em>«todos lo hacen»</em>, <em>«si no vienes, no eres del grupo»</em>.</p>
         </div>
         <div class="card">
           <div class="ico">🌫️</div>
           <h3>Indirecta</h3>
-          <p>Nadie te dice nada, pero imitás para encajar: te vestís, hablás o actuás como el grupo para no quedar afuera.</p>
+          <p>Nadie te dice nada, pero imitas para encajar: te vistes, hablas o actúas como el grupo para no quedar fuera.</p>
         </div>
       </div>
       <div class="example rv">
-        <div><strong>Directa:</strong> «Dale, mandale un mensaje a la profe, no seas ortiva».<br>
-             <strong>Indirecta:</strong> todos se ríen de algo que a vos no te da gracia, y te reís igual para no quedar afuera.</div>
+        <div><strong>Directa:</strong> «Vamos, mándale un mensaje a la profe, no seas amargado».<br>
+             <strong>Indirecta:</strong> todos se ríen de algo que a ti no te da gracia, y te ríes igual para no quedar fuera.</div>
       </div>
     </div>
   </section>
@@ -282,7 +291,7 @@
         <div class="ico">😰</div>
         <h3>¿Por qué cuesta tanto decir «no»?</h3>
         <p>Porque el cerebro interpreta el rechazo social como una amenaza real.
-          Quedar afuera duele, y mucho. Por eso a veces callamos, aceptamos o hacemos cosas
+          Quedar fuera duele, y mucho. Por eso a veces callamos, aceptamos o hacemos cosas
           que en realidad no queremos, solo para no sentirnos solos.</p>
       </div>
       <div class="remember rv">
@@ -292,12 +301,12 @@
     </div>
   </section>
 
-  <!-- 11 · RED FLAG GAME (integrado al bloque 2) -->
+  <!-- 11 · RED FLAG GAME -->
   <section class="slide">
     <div class="inner">
       <span class="badge rv">Minijuego · Amistades</span>
       <h2 class="rv">Red Flag <span class="vs">/</span> Green Flag</h2>
-      <p class="lead rv">¿Esta actitud suma o resta? Elegí rápido.</p>
+      <p class="lead rv">¿Esta actitud suma o resta? Elige rápido.</p>
       <div class="game rv" data-game="redflag" data-config="redflag">
         <div class="game__top">
           <span data-role="counter">Tarjeta 1 / 8</span>
@@ -319,17 +328,17 @@
     <div class="inner">
       <span class="badge rv">Bloque 3 · Herramientas</span>
       <h2 class="rv">Asertividad: decir «NO» <span class="grad">sin perder amigos</span></h2>
-      <p class="objetivo rv">Al terminar este bloque vas a tener dos herramientas concretas para decir «no» sin pelear.</p>
+      <p class="objetivo rv">Al terminar este bloque tendrás dos herramientas concretas para decir «no» sin pelear.</p>
       <div class="grid grid--3 rv">
         <div class="card">
           <div class="ico">🙈</div>
           <h3>Estilo pasivo</h3>
-          <p>«Bueno… como vos quieras». Calla lo que siente para evitar el conflicto.</p>
+          <p>«Bueno… como tú quieras». Calla lo que siente para evitar el conflicto.</p>
         </div>
         <div class="card">
           <div class="ico">🔥</div>
           <h3>Estilo agresivo</h3>
-          <p>«Sos un idiota, se hace lo que yo digo». Impone, humilla, rompe vínculos.</p>
+          <p>«Eres un idiota, se hace lo que yo digo». Impone, humilla, rompe vínculos.</p>
         </div>
         <div class="card card--green">
           <div class="ico">💬</div>
@@ -357,7 +366,7 @@
         <div class="card">
           <div class="ico">🎉</div>
           <h3>Ejemplo 2</h3>
-          <p>«Me da paja cuando me apuran con el plan, y prefiero decidir yo con tiempo».</p>
+          <p>«Me molesta cuando me apuran con el plan, y prefiero decidir yo con tiempo».</p>
         </div>
       </div>
       <div class="note rv">
@@ -377,7 +386,7 @@
         <div class="light light--red">
           <span>🔴</span>
           <h3>1 · PARAR</h3>
-          <p>Frená. Respirá hondo. No respondas en caliente ni por lo que diga el grupo.</p>
+          <p>Frena. Respira hondo. No respondas en caliente ni por lo que diga el grupo.</p>
         </div>
         <div class="light light--yellow">
           <span>🟡</span>
@@ -387,18 +396,18 @@
         <div class="light light--green">
           <span>🟢</span>
           <h3>3 · ACTUAR</h3>
-          <p>Elegí la opción que te representa y hacete cargo. Con respeto, pero firme.</p>
+          <p>Elige la opción que te representa y hazte cargo. Con respeto, pero firme.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 15 · SCENARIOS GAME (aplicar herramientas) -->
+  <!-- 15 · SCENARIOS GAME -->
   <section class="slide">
     <div class="inner">
       <span class="badge rv">Minijuego · Herramientas</span>
       <h2 class="rv">¿Qué <span class="grad">harías</span>?</h2>
-      <p class="lead rv">Elegí la respuesta más asertiva en cada caso.</p>
+      <p class="lead rv">Elige la respuesta más asertiva en cada caso.</p>
       <div class="game rv" data-game="scenario" data-config="scenarios">
         <div class="game__top">
           <span data-role="counter">Caso 1 / 4</span>
