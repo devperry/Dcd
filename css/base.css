@@ -1,0 +1,187 @@
+:root{
+  --bg:#0b0d1a;
+  --violet:#7c5cff;
+  --pink:#ff5c8a;
+  --mint:#2ee6a8;
+  --amber:#ffc857;
+  --red:#ff4d6d;
+  --text:#eef0ff;
+  --muted:#a5a9c9;
+  --card:rgba(255,255,255,.055);
+  --line:rgba(255,255,255,.12);
+  --wa-header:#1f2c34;
+  --wa-bg:#0b141a;
+  --wa-in:#202c33;
+  --wa-out:#005c4b;
+  --wa-text:#e9edef;
+  --wa-time:#8696a0;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  background:var(--bg);color:var(--text);overflow:hidden;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+body::before{
+  content:'';position:fixed;inset:-25%;z-index:-1;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(124,92,255,.38), transparent 45%),
+    radial-gradient(circle at 82% 72%, rgba(255,92,138,.30), transparent 45%),
+    radial-gradient(circle at 62% 6%,  rgba(46,230,168,.16), transparent 42%);
+  filter:blur(34px);
+  animation:float 24s ease-in-out infinite alternate;
+}
+@keyframes float{
+  0%{transform:translate3d(-2%,-2%,0) scale(1)}
+  50%{transform:translate3d(2%,1.5%,0) scale(1.07)}
+  100%{transform:translate3d(-1%,3%,0) scale(1.03)}
+}
+[hidden]{display:none !important}
+
+/* Tipografía */
+h1{font-size:clamp(2rem,5.8vw,3.8rem);font-weight:800;line-height:1.05;letter-spacing:-.03em}
+h2{font-size:clamp(1.4rem,3.4vw,2.3rem);font-weight:800;line-height:1.12;letter-spacing:-.02em}
+h3{font-size:clamp(.92rem,1.5vw,1.05rem);font-weight:750;letter-spacing:-.01em;margin-bottom:.35rem}
+p,li{font-size:clamp(.85rem,1.3vw,.98rem);line-height:1.55;color:var(--muted)}
+strong{color:var(--text);font-weight:700}
+
+/* Utilidades */
+.grad{background:linear-gradient(100deg,var(--violet),var(--pink) 55%,var(--amber));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.grad-g{background:linear-gradient(100deg,var(--mint),#57d9ff);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.grad-r{background:linear-gradient(100deg,var(--red),var(--pink));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(.92rem,1.6vw,1.1rem);color:#c3c7e6;max-width:64ch;margin:0 auto}
+.badge{
+  display:inline-block;width:auto !important;
+  font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:#cfc7ff;background:rgba(124,92,255,.16);
+  border:1px solid rgba(124,92,255,.42);border-radius:999px;
+  padding:.42em 1em;
+}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.pill{font-size:.76rem;font-weight:650;color:#d9dcf5;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);
+  border-radius:999px;padding:.42em .95em;}
+.vs{font-size:.7em;color:var(--muted);font-weight:600;padding:0 .4em;letter-spacing:.1em}
+.objetivo{
+  font-size:clamp(.82rem,1.25vw,.92rem);color:#c3c7e6;
+  font-style:italic;max-width:60ch;margin:0 auto;
+}
+.objetivo::before{content:'🎯 ';font-style:normal}
+
+/* Bloques pedagógicos */
+.note{
+  font-size:clamp(.82rem,1.2vw,.92rem);line-height:1.55;color:#c3c7e6;
+  background:rgba(255,255,255,.045);border:1px solid var(--line);
+  border-left:3px solid var(--amber);border-radius:12px;
+  padding:.8rem 1rem;text-align:left;
+}
+.reflect{
+  display:flex;gap:12px;align-items:flex-start;
+  background:rgba(124,92,255,.12);border:1px solid rgba(124,92,255,.38);
+  border-radius:14px;padding:.85rem 1.1rem;
+  font-size:clamp(.82rem,1.2vw,.92rem);line-height:1.5;
+  color:#d3d7f2;text-align:left;
+}
+.reflect::before{content:'💭';font-size:1.15rem;flex:none;line-height:1.1}
+.example{
+  display:flex;gap:12px;align-items:flex-start;
+  background:rgba(255,200,87,.07);border:1px solid rgba(255,200,87,.32);
+  border-left:3px solid var(--amber);border-radius:14px;
+  padding:.85rem 1.1rem;
+  font-size:clamp(.82rem,1.2vw,.92rem);line-height:1.55;
+  color:#e8dfc8;text-align:left;
+}
+.example::before{content:'📌';font-size:1.05rem;flex:none;line-height:1.1}
+.remember{
+  background:linear-gradient(135deg,rgba(46,230,168,.13),rgba(87,217,255,.07));
+  border:1px solid rgba(46,230,168,.38);border-radius:16px;
+  padding:.85rem 1.2rem;text-align:left;
+}
+.remember__label{
+  font-size:.64rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+  color:#7df0c6;margin-bottom:3px;
+}
+
+/* ────────────────────────────────────────────
+   ANIMACIONES · keyframes
+   ──────────────────────────────────────────── */
+@keyframes riseIn{
+  from{opacity:0;transform:translateY(28px) scale(.98)}
+  to{opacity:1;transform:none}
+}
+@keyframes slideInUp{
+  from{opacity:0;transform:translateY(60px)}
+  to{opacity:1;transform:none}
+}
+@keyframes slideInDown{
+  from{opacity:0;transform:translateY(-40px)}
+  to{opacity:1;transform:none}
+}
+@keyframes slideInLeft{
+  from{opacity:0;transform:translateX(-50px)}
+  to{opacity:1;transform:none}
+}
+@keyframes slideInRight{
+  from{opacity:0;transform:translateX(50px)}
+  to{opacity:1;transform:none}
+}
+@keyframes popIn{
+  0%{opacity:0;transform:scale(.8)}
+  60%{opacity:1;transform:scale(1.04)}
+  100%{opacity:1;transform:scale(1)}
+}
+@keyframes flipIn{
+  from{opacity:0;transform:perspective(800px) rotateX(-45deg)}
+  to{opacity:1;transform:none}
+}
+@keyframes blurIn{
+  from{opacity:0;filter:blur(16px);transform:scale(.96)}
+  to{opacity:1;filter:blur(0);transform:none}
+}
+@keyframes bounceIn{
+  0%{opacity:0;transform:scale(.55)}
+  55%{opacity:1;transform:scale(1.08)}
+  80%{transform:scale(.97)}
+  100%{opacity:1;transform:scale(1)}
+}
+@keyframes msgPop{
+  from{opacity:0;transform:translateY(8px) scale(.96)}
+  to{opacity:1;transform:none}
+}
+
+/* Entrada direccional del slide completo */
+.slide.active.is-entering-forward .inner{
+  animation:slideEnterFromRight .5s cubic-bezier(.2,.85,.25,1) both;
+}
+.slide.active.is-entering-backward .inner{
+  animation:slideEnterFromLeft .5s cubic-bezier(.2,.85,.25,1) both;
+}
+@keyframes slideEnterFromRight{
+  from{opacity:0;transform:translateX(30px)}
+  to{opacity:1;transform:none}
+}
+@keyframes slideEnterFromLeft{
+  from{opacity:0;transform:translateX(-30px)}
+  to{opacity:1;transform:none}
+}
+
+/* Flash del progress bar */
+.progress__bar.flash{animation:progressFlash .6s ease-out}
+@keyframes progressFlash{
+  0%,100%{filter:brightness(1);box-shadow:none}
+  40%{filter:brightness(1.7) saturate(1.3);box-shadow:0 0 12px rgba(255,92,138,.8)}
+}
+
+/* Respeto a prefers-reduced-motion */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001s!important;
+    transition-duration:.001s!important;
+    animation-delay:0s!important;
+  }
+}
