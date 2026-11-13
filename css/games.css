@@ -1,0 +1,91 @@
+.game{
+  background:rgba(15,17,32,.6);border:1px solid var(--line);border-radius:20px;
+  padding:clamp(14px,2vw,22px);backdrop-filter:blur(14px);
+  width:100%;max-width:760px;margin:0 auto;
+}
+.game__top{
+  display:flex;justify-content:space-between;gap:12px;
+  font-size:.72rem;font-weight:750;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
+}
+
+.btn{
+  font:inherit;font-weight:750;font-size:.88rem;
+  padding:.65em 1.3em;border-radius:999px;border:1px solid var(--line);
+  background:rgba(255,255,255,.07);color:var(--text);cursor:pointer;
+  transition:transform .18s, background .18s, border-color .18s, box-shadow .18s;
+}
+.btn:hover:not(:disabled){transform:translateY(-2px);background:rgba(255,255,255,.14)}
+.btn:active:not(:disabled){transform:translateY(0) scale(.97)}
+.btn:disabled{cursor:default;opacity:.55;transform:none}
+.btn--red:hover:not(:disabled){border-color:var(--red);box-shadow:0 0 0 3px rgba(255,77,109,.2)}
+.btn--green:hover:not(:disabled){border-color:var(--mint);box-shadow:0 0 0 3px rgba(46,230,168,.2)}
+.btn--ghost{border-color:rgba(255,255,255,.22);margin-top:12px}
+.btn.correct{background:rgba(46,230,168,.22)!important;border-color:var(--mint)!important;
+  color:#bff7e3!important;box-shadow:0 0 0 3px rgba(46,230,168,.18);opacity:1!important;}
+.btn.wrong{background:rgba(255,77,109,.2)!important;border-color:var(--red)!important;
+  color:#ffc7d2!important;box-shadow:0 0 0 3px rgba(255,77,109,.18);opacity:1!important;}
+
+.feedback{margin-top:10px;min-height:1.3em;font-size:.88rem;font-weight:650;line-height:1.5}
+.feedback.ok{color:#7df0c6}
+.feedback.bad{color:#ff9db1}
+
+.q-text{font-size:clamp(.95rem,1.8vw,1.15rem);font-weight:750;color:var(--text);
+  line-height:1.45;margin-bottom:12px;}
+.q-options{display:grid;gap:7px}
+
+/* Opciones: entrada escalonada vía CSS.
+   `backwards` (no `both`) para que si la animación falla queden visibles. */
+.option{
+  font:inherit;font-size:clamp(.84rem,1.3vw,.92rem);font-weight:600;
+  text-align:left;padding:.7em 1em;border-radius:11px;
+  border:1px solid var(--line);background:rgba(255,255,255,.045);
+  color:#d5d9f4;cursor:pointer;
+  transition:background .18s, border-color .18s, transform .18s, color .18s;
+  animation:optionIn .4s cubic-bezier(.2,.85,.25,1) backwards;
+  animation-delay:calc(var(--i, 0) * 50ms);
+}
+@keyframes optionIn{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:none}
+}
+.option:hover:not(:disabled){background:rgba(255,255,255,.11);
+  border-color:rgba(255,255,255,.28);transform:translateX(3px)}
+.option:disabled{cursor:default;opacity:.62}
+.option.correct{background:rgba(46,230,168,.16);border-color:var(--mint);color:#bff7e3;opacity:1}
+.option.wrong{background:rgba(255,77,109,.15);border-color:var(--red);color:#ffc7d2;opacity:1}
+
+/* Red Flag */
+.rf-statement{
+  font-size:clamp(.98rem,2vw,1.3rem);font-weight:750;line-height:1.4;
+  color:var(--text);min-height:2.8em;display:flex;align-items:center;
+  justify-content:center;padding:.3rem 0;
+}
+.rf-statement.pop{animation:msgPop .4s cubic-bezier(.2,.9,.3,1.2) both}
+.rf-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:4px}
+
+/* Scenario */
+.scenario-situation{
+  background:rgba(124,92,255,.08);border:1px solid rgba(124,92,255,.3);
+  border-radius:14px;padding:1rem 1.2rem;
+  font-size:clamp(.9rem,1.4vw,1.05rem);line-height:1.5;
+  color:#d3d7f2;margin-bottom:14px;text-align:left;
+}
+.option.style-passive{border-color:var(--amber);background:rgba(255,200,87,.1);color:#ffe0a3}
+.option.style-aggressive{border-color:var(--red);background:rgba(255,77,109,.1);color:#ffbccb}
+.option.style-assertive{border-color:var(--mint);background:rgba(46,230,168,.12);color:#bff7e3}
+
+/* Score pop */
+.game__top [data-role="score"]{display:inline-block;transform-origin:center}
+.game__top [data-role="score"].pop{animation:scorePop .45s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes scorePop{
+  0%{transform:scale(1)}
+  45%{transform:scale(1.25);color:var(--mint)}
+  100%{transform:scale(1)}
+}
+
+/* Reanimar pregunta / situación */
+.q-text.anim,
+.scenario-situation.anim{
+  animation:blurIn .45s cubic-bezier(.2,.85,.25,1) both;
+}
